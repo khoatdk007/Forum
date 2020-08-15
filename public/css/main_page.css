@@ -1,0 +1,75 @@
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.title h2 {
+  margin: 0;
+}
+
+.title a {
+  height: 2.2rem;
+  line-height: 2.2rem;
+  width: 7rem;
+  background: #555;
+  color: #fff;
+  text-align: center;
+  transition: 0.2s;
+}
+
+.title a:hover {
+  background: #222;
+}
+/* -------------- */
+main {
+  background: #eee;
+  margin-bottom: .5rem;
+}
+
+.post {
+  border-bottom: 1px solid #bdbdbd;
+  padding: 10px;
+}
+
+.post h3 {
+  margin: 0;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.category {
+  color: #666;
+}
+
+.author a {
+  font-weight: bold;
+  color: #666;
+}
+
+.author .nickname {
+  color: #777;
+}
+/*---- nav bar ----*/
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav img {
+  padding: 4px;
+  border: 1px solid #444;
+}
+
+nav img:hover {
+  cursor: pointer;
+  box-shadow: 0 0 3px 4px #aaa;
+}

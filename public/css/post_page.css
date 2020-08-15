@@ -1,0 +1,104 @@
+main {
+  margin-bottom: .5rem;
+}
+
+main > * {
+  margin-bottom: 2rem;
+  padding: 15px;
+}
+
+.post {
+  background: #eee;
+  border-bottom: 1px solid #bdbdbd;
+}
+
+.post h3 {
+  margin: 0;
+}
+
+.info {margin-bottom: 1rem;}
+
+.info .author a{
+  font-weight: bold;
+  color: #666;
+}
+
+.info .author .nickname {
+  color: #777;
+}
+
+.info .author .nickname {
+  color: #777;
+}
+
+.info .text {
+  color: #444;
+}
+
+.content {
+  text-align: justify;
+  line-height: 1.3;
+}
+
+.tags {
+  font-weight: bold;
+  color: #999;
+}
+
+.reply {
+  background: #dfdfdf;
+}
+
+.reply-box {
+  background: #dfdfdf;
+}
+
+.input-row {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0;
+}
+
+.input-row h4 {
+  margin: 0 0 1rem 0;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.input-row textarea {
+  resize: none;
+  outline: none;
+  height: 20rem;
+  width: 100%;
+  max-width: 100%;
+  padding: 10px;
+  font-family: Consolas, Monaco,"Lucida Console", "Courier New", monospace, sans-serif;
+}
+
+.input-row label {
+  margin-bottom: 0.5rem;
+}
+
+.input-row input[type="text"] {
+  outline: none;
+  padding: 10px;
+  font-family: Consolas, Monaco,"Lucida Console", "Courier New", monospace, sans-serif;
+}
+
+.reply-box input[type="submit"] {
+  margin-top: 1rem;
+  border: none;
+  border-radius: 0;
+  width: 5rem;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  background: #555;
+  color: #eee;
+  outline: none;
+  transition: 0.2s;
+}
+
+.reply-box input[type="submit"]:hover {
+  background: #666;
+  color: #ddd;
+}

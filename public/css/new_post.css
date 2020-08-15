@@ -1,0 +1,41 @@
+main {
+  background: #eee;
+  padding: 1rem;
+}
+
+.input-row {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-row:last-child {
+  margin: 0;
+}
+
+.input-row label {
+  font-size: 1.2rem;
+}
+
+.input-row textarea {
+  resize: none;
+  height: 20rem;
+}
+
+textarea, input[type="text"] {
+  padding: 0.5rem;
+  margin-top: 0.2rem;
+  outline: none;
+}
+
+input[type="submit"] {
+  border: none;
+  border-radius: 0;
+  width: 5rem;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  background: #555;
+  color: #eee;
+  outline: none;
+  transition: 0.2s;
+}

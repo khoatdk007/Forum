@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head', {title: 'New Post'}) %>
+    <link rel="stylesheet" href="/css/new_post.css">
+  </head>
+  <body>
+    <header><%- include('../partials/header') %></header>
+    <main>
+      <form action="" method="POST">
+        <div class="input-row">
+          <label for="title">Title</label>
+          <input type="text" name="title" required>
+        </div>
+        <div class="input-row">
+          <label for="title">Body</label>
+          <textarea name="content" required></textarea>
+        </div>
+        <div class="input-row">
+          <label for="tags">Tags</label>
+          <input type="text" name="tags" required>
+        </div>
+        <div class="input-row">
+          <label for="fullname">Your Full Name</label>
+          <input type="text" name="fullname" required>
+        </div>
+        <div class="input-row">
+          <label for="nickname">Your Nickname</label>
+          <input type="text" name="nickname" required>
+        </div>
+        <input type="submit" value="Post">
+      </form>
+    </main>
+    <footer><%- include('../partials/footer') %></footer>
+  </body>
+</html>

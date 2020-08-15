@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head', {title: 'Forum'}) %>
+    <link rel="stylesheet" href="/css/main_page.css" />
+  </head>
+  <body>
+    <header><%- include('../partials/header') %></header>
+    <div class="title">
+      <h2>All Posts</h2>
+      <a href="./new-post">New Post</a>
+    </div>
+    <main>
+      <% posts.forEach(post => { %>
+      <div class="post">
+        <a href= "<%= '/post/' + post._id %>"><h3><%= post.title %></h3></a>
+        <div class="info">
+          <div class="category"><%= '#' + post.tags.split().join(' #') %></div>
+          <div>
+            <div class="author"><a href="#"><%= post.author.fullname %></a> <span class="nickname">(<%= post.author.nickname %>)</span></div>
+            <div class="time">asked on <%= post.time %></div>
+          </div>
+        </div>
+      </div>
+      <% }); %>
+    </main>
+    <nav>
+      <img class="left-arrow" src="/images/left.png" width="16" height="16" />
+      <div class="page-info">Page <span id="page-number">1</span></div>
+      <img class="right-arrow" src="/images/right.png" width="16" height="16" />
+    </nav>
+
+    <footer><%- include('../partials/footer') -%></footer>
+  </body>
+</html>

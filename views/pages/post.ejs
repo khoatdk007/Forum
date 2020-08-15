@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head', { title: post.title }) %>
+    <link rel="stylesheet" href="/css/post_page.css" />
+  </head>
+  <body>
+    <header><%- include('../partials/header') %></header>
+    <main>
+      <div class="post">
+        <a href="#"><h3><%= post.title %></h3></a>
+        <hr>
+        <div class="info">
+          <span class="author"><a href="#"><%= post.author.fullname %></a> <span class="nickname">(<%= post.author.nickname %>)</span></span>
+          <span class="text">asked on</span>
+          <span class="time"><%= post.time %></span>
+        </div>
+        <div class="content">
+          <p><%= post.content %></p>
+        </div>
+        <div class="tags"><%= '#' + post.tags.split().join(' #'); %></div>
+      </div>
+      <% post.replies.forEach((repl) => { %>
+      <div class="reply">
+        <div class="info">
+          <span class="author"><a href="#"><%= repl.user.fullname %></a> <span class="nickname">(<%= repl.user.nickname %>)</span></span>
+          <span class="text">replied on</span>
+          <span class="time"><%= repl.time %></span>
+        </div>
+        <div class="content">
+          <p><%= repl.content %></p>
+        </div>
+      </div>
+      <% }); %>
+      <form action="" method="POST" class="reply-box">
+        <div class="input-row">
+          <h4>Your Answer</h4>
+          <textarea name="content" required></textarea>
+        </div>
+        <div class="input-row">
+          <label for="fullname">Your Full Name</label>
+          <input type="text" name="fullname" required>
+        </div>
+        <div class="input-row">
+          <label for="nickname">Your Nickname</label>
+          <input type="text" name="nickname" required>
+        </div>
+        <input type="submit" value="Reply">
+      </form>
+    </main>
+    <footer><%- include('../partials/footer') %></footer>
+  </body>
+</html>

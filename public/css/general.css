@@ -1,0 +1,42 @@
+body {
+  padding: 0 2rem;
+  background: #bdbdbd;
+  font-family: Arial, Helevetica, sans-serif;
+}
+
+@media(min-width: 1000px) {
+  body {
+    padding: 0 20%;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: #111;
+}
+
+header {
+  margin: 2rem 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header h1 {margin: 0;}
+
+header .user{
+  display: flex;
+  align-items: center;
+}
+
+header .user > * {
+  margin: 0 10px;
+}
+
+/* -------------- */
+footer {
+  margin-top: 2rem;
+  color: #777;
+  text-align: center;
+}
