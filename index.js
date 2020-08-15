@@ -7,15 +7,16 @@ const databaseURL = process.env.DB_URL;
 app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
-  const pageNum = req.params.pageNum ? req.params.pageNum : 1;
+  const pageNum = req.query.page ? req.query.page : 1;
   MongoClient.connect(databaseURL, {useUnifiedTopology: true}, (err, client) => {
     if (err) throw err;
     const dbo = client.db();
     dbo.collection('posts').find({}).sort({_id: -1}).toArray((err, result) => {
       if (err) throw err;
-      if ((pageNum - 1) * 5 > result[0].length) return res.render('pages/page_not_found');
+      if ((pageNum - 1) * 5 > result.length) return res.render('pages/page_not_found');
       const data = result.slice((pageNum - 1) * 5, pageNum * 5);
-      res.render('pages/index', {posts: data});
+      const pageLimit = Math.trunc(result.length/5) + Math.ceil(result.length/5 % 1);
+      res.render('pages/index', {posts: data, page: pageNum, pageLimit: pageLimit});
     });
   });
 });

@@ -10,6 +10,7 @@
 }
 
 .title a {
+  display: block;
   height: 2.2rem;
   line-height: 2.2rem;
   width: 7rem;
@@ -64,12 +65,39 @@ nav {
   justify-content: space-between;
 }
 
-nav img {
-  padding: 4px;
-  border: 1px solid #444;
+nav .btn {
+  cursor: pointer;
+  outline: none;
+  border-radius: 0;
+  border: 1px solid #666;
+  background: #eee;
+  font-size: 1.5rem;
+  transition: box-shadow 0.3s;
 }
 
-nav img:hover {
-  cursor: pointer;
-  box-shadow: 0 0 3px 4px #aaa;
+nav .btn:hover {
+  box-shadow: 0 0 4px 4px #aaa;
+}
+
+nav .btn:active {
+  background: #ccc;
+}
+
+@media(max-width:500px) {
+  .title {
+    display: block;
+  }
+  .title h2 {
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+  .title a {
+    width: 100%;
+  }
+  .info {
+    display: block;
+  }
+  .info > * {
+    margin: 0.4rem 0;
+  }
 }

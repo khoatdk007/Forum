@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <%- include('../partials/head', {title: 'Forum'}) %>
-    <link rel="stylesheet" href="/css/main_page.css" />
+    <link rel="stylesheet" href="/css/main_page.css">
   </head>
   <body>
     <header><%- include('../partials/header') %></header>
@@ -25,11 +25,15 @@
       <% }); %>
     </main>
     <nav>
-      <img class="left-arrow" src="/images/left.png" width="16" height="16" />
-      <div class="page-info">Page <span id="page-number">1</span></div>
-      <img class="right-arrow" src="/images/right.png" width="16" height="16" />
+      <button id="left-arrow" class="btn">&#129040;</button>
+      <div class="page-info">Page <span id="current-page"><%= page %></span>/<span id="page-limit"><%= pageLimit %></span>
+        <form action="" method="GET" id="switch-page">
+          <input type="hidden" id="page-number" name="page" value="<%= page %>" readonly>
+        </form>
+      </div>
+      <button id="right-arrow" class="btn">&#129042;</button>
     </nav>
-
+    <script src='/js/main_page.js'></script>
     <footer><%- include('../partials/footer') -%></footer>
   </body>
 </html>
