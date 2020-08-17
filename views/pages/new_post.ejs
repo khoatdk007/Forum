@@ -7,26 +7,29 @@
   <body>
     <header><%- include('../partials/header') %></header>
     <main>
+      <% if (typeof msg !== 'undefined') { %>
+        <div class="error"><%= msg %></div>
+      <% } %>
       <form action="" method="POST">
         <div class="input-row">
           <label for="title">Title</label>
-          <input type="text" name="title" required>
+          <input type="text" name="title" value="<%= typeof title !== 'undefined' ? title : ''%>">
         </div>
         <div class="input-row">
           <label for="title">Body</label>
-          <textarea name="content" required></textarea>
+          <textarea name="content"><%= typeof content !== 'undefined' ? content : ''%></textarea>
         </div>
         <div class="input-row">
           <label for="tags">Tags</label>
-          <input type="text" name="tags" required>
+          <input type="text" name="tags" value="<%= typeof tags !== 'undefined' ? tags : ''%>">
         </div>
         <div class="input-row">
           <label for="fullname">Your Full Name</label>
-          <input type="text" name="fullname" required>
+          <input type="text" name="fullname" value="<%= typeof fullname !== 'undefined' ? fullname : ''%>">
         </div>
         <div class="input-row">
           <label for="nickname">Your Nickname</label>
-          <input type="text" name="nickname" required>
+          <input type="text" name="nickname" value="<%= typeof nickname !== 'undefined' ? nickname : ''%>">
         </div>
         <input type="submit" value="Post">
       </form>

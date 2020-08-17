@@ -1,20 +1,30 @@
 const express = require('express');
-const route = express.Router();
+const router = express.Router();
 const MongoClient = require('mongodb').MongoClient;
 const ObjectId = require('mongodb').ObjectId;
 require('dotenv').config();
 
 const databaseURL = process.env.DB_URL;
 
-route.use(express.urlencoded({extended: true}));
-route.use(express.json());
+router.use(express.urlencoded({extended: true}));
+router.use(express.json());
 
-route.get('/', (req, res) => {
+router.get('/', (req, res) => {
   res.render('pages/new_post.ejs');
 });
 
-route.post('/', (req, res) => {
+router.post('/', (req, res) => {
   const newPostData = req.body;
+  if (!newPostData.title || !newPostData.content || !newPostData.tags || !newPostData.fullname || !newPostData.nickname) {
+    return res.render('pages/new_post', {
+      msg: 'Please fill in all fields !',
+      title: newPostData.title,
+      tags: newPostData.tags,
+      content: newPostData.content,
+      fullname: newPostData.fullname,
+      nickname: newPostData.nickname
+    });
+  }
   newPostData.time = new Date().toUTCString();
   newPostData.author = {
     fullname: newPostData.fullname,
@@ -34,4 +44,4 @@ route.post('/', (req, res) => {
   });
 });
 
-module.exports = route;
+module.exports = router;

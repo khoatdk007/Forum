@@ -33,17 +33,20 @@
       </div>
       <% }); %>
       <form action="" method="POST" class="reply-box">
+        <% if (typeof msg !== 'undefined') { %>
+          <div class="error"><%= msg %></div>
+        <% } %>
         <div class="input-row">
           <h4>Your Answer</h4>
-          <textarea name="content" required></textarea>
+          <textarea name="content"><%= typeof content !== 'undefined' ? content : '' %></textarea>
         </div>
         <div class="input-row">
           <label for="fullname">Your Full Name</label>
-          <input type="text" name="fullname" required>
+          <input type="text" name="fullname" value="<%= typeof fullname !== 'undefined' ? fullname : '' %>">
         </div>
         <div class="input-row">
           <label for="nickname">Your Nickname</label>
-          <input type="text" name="nickname" required>
+          <input type="text" name="nickname" value="<%= typeof nickname !== 'undefined' ? nickname : '' %>">
         </div>
         <input type="submit" value="Reply">
       </form>

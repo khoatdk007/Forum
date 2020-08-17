@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
       if (err) throw err;
       if ((pageNum - 1) * 5 > result.length) return res.render('pages/page_not_found');
       const data = result.slice((pageNum - 1) * 5, pageNum * 5);
-      const pageLimit = Math.trunc(result.length/5) + Math.ceil(result.length/5 % 1);
+      const pageLimit = Math.ceil(result.length / 5);
       res.render('pages/index', {posts: data, page: pageNum, pageLimit: pageLimit});
     });
   });
